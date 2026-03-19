@@ -12,11 +12,14 @@ public class PariDispari {
         int conteggioTotale=0;
         int conteggioPari=0;
         int conteggioDispari=0;
+        int [] numList= new int[contatore];
 
         
-        for(int i=1; i <= contatore; i++){
+        for(int i=0; i < contatore; i++){
             System.out.println("Inserisci un Numero: ");
                 int NumUtente=scanner.nextInt();
+
+                numList[i]=NumUtente; 
 
                 
                 if(NumUtente %2 == 0){
@@ -45,7 +48,13 @@ public class PariDispari {
     mediaDispari=(double)sommaDispari/conteggioDispari;
 
     System.out.println("La media dei numeri pari è "+ mediaPari+ ",mentre per i numeri dispari la media è "+ mediaDispari+ "per una media totale di: "+ mediaTotale );
-        
+      
+    for(int i=0; i < contatore; i+=2){
+        //elementi in posizione pari dell' array
+        System.out.println("elementi in posizione pari dell'array");
+
+        System.out.println(numList[i]);
+    }   
     scanner.close();
         
     }
